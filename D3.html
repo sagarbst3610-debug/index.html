@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For You ❤️</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Georgia', serif;
+        background: linear-gradient(120deg, #c8a2c8, #e6e6fa);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    /* Envelope Container */
+    .envelope-container {
+        text-align: center;
+        cursor: pointer;
+        transition: transform 1s ease, opacity 1s ease;
+    }
+
+    .envelope-container.open {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    /* Envelope */
+    .envelope {
+        position: relative;
+        width: 300px;
+        height: 200px;
+        background: #b57edc;
+        border-radius: 10px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        overflow: hidden;
+    }
+
+    /* Flap */
+    .flap {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: #9b59b6;
+        clip-path: polygon(0 0, 100% 0, 50% 60%);
+        transform-origin: top;
+        transition: transform 1s ease;
+        z-index: 2;
+    }
+
+    .envelope.open .flap {
+        transform: rotateX(180deg);
+    }
+
+    .tap-text {
+        margin-top: 20px;
+        color: white;
+        font-size: 1.2em;
+    }
+
+    /* Letter */
+    .letter {
+        position: absolute;
+        max-width: 700px;
+        padding: 30px;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 1.5s ease;
+        line-height: 1.8;
+        font-size: 18px;
+    }
+
+    .letter.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    h1 {
+        text-align: center;
+        color: #9b59b6;
+    }
+
+</style>
+</head>
+
+<body>
+
+<!-- Envelope -->
+<div class="envelope-container" onclick="openEnvelope()" id="envContainer">
+    <div class="envelope" id="envelope">
+        <div class="flap"></div>
+    </div>
+    <div class="tap-text">Tap to Open and smile 💌</div>
+</div>
+
+<!-- Letter -->
+<div class="letter" id="letter">
+    <h1>My sillyy ❤️</h1>
+    <p>
+        I don’t even know where to begin because every time I try to put my feelings into words they somehow feel too small compared to what I truly feel for you. Even though distance separates us you are the closest person to my heart. It’s strange and beautiful at the same time — how someone so far away can feel like home. Every message from you  and every little “I miss you” becomes the highlight of my day. I find pieces of you in everything  in songs, and even in quiet moments when I wish you were right beside me. 
+
+      I want you to know that my love for you is not limited by time zones or screens. It grows in the waiting, strengthens in the distance, and shines even in the quiet moments when we both miss each other the most!! 
+
+        You are my peace and my chaos, my comfort and my excitement, my favorite thought before I sleep and my first smile when I wake up. Loving you from afar isn’t always going to be easy but it is always worth it  because you are worth every second of waiting every mile between us and every heartbeat that whispers your name🫶🏼
+
+       So until I can look into your eyes instead of a screen, until I can hug you instead of imagining it, I’ll keep loving you in every way I can from here. And I promise you… this distance is just a chapter not our whole story🫠
+     
+      i hope whenever you open and read this it reminds you that this dumboo of yours is always here loving and missing you and and it brings an instant smile on your face whenever you are feeling low and down!💕🧿
+
+        Forever yours,
+         I love youu always and endlessly!!!❤️🧿
+   
+ </p>
+</div>
+
+<script>
+function openEnvelope() {
+    document.getElementById("envelope").classList.add("open");
+
+    setTimeout(() => {
+        document.getElementById("envContainer").classList.add("open");
+    }, 800);
+
+    setTimeout(() => {
+        document.getElementById("letter").classList.add("show");
+    }, 1400);
+}
+</script>
+
+</body>
+</html>
